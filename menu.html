@@ -66,7 +66,7 @@
 
     /* Journal-style menu viewer */
     .journal-menu-container {
-      max-width: 100%;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 40px 20px;
       width: 100%;
@@ -107,19 +107,19 @@
       perspective: 2000px;
       margin: 0 auto;
       width: 100%;
-      max-width: 100%;
+      max-width: 1400px;
     }
 
     .journal-book {
       position: relative;
       width: 100%;
       height: auto;
-      min-height: 70vh;
+      max-height: 70vh;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 32px;
-      overflow: visible;
+      overflow: hidden;
       padding: 20px 0;
     }
 
@@ -127,11 +127,11 @@
       position: relative;
       width: 100%;
       height: 100%;
-      max-width: 100%;
+      max-width: 1400px;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: visible;
+      overflow: hidden;
     }
 
     .journal-page {
@@ -139,10 +139,11 @@
       width: 100%;
       height: auto;
       max-width: 100%;
+      max-height: 70vh;
       background: white;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
       border-radius: 4px;
-      overflow: visible;
+      overflow: hidden;
       transform-style: preserve-3d;
       transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
       margin: 0 auto;
@@ -168,9 +169,10 @@
     }
 
     .journal-page canvas {
-      width: 100% !important;
-      height: auto !important;
       max-width: 100%;
+      max-height: 70vh;
+      width: auto;
+      height: auto;
       object-fit: contain;
       display: block;
       background: white;
@@ -269,13 +271,18 @@
 
       .journal-book {
         height: auto;
-        min-height: 50vh;
+        max-height: 60vh;
         padding: 10px 0;
       }
 
       .journal-page {
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         width: 100%;
+        max-height: 60vh;
+      }
+
+      .journal-page canvas {
+        max-height: 60vh;
       }
 
       .journal-page-container {
@@ -4034,16 +4041,20 @@
           try {
             const page = await this.pdfDoc.getPage(pageNum);
 
-            // Get container dimensions - use full width minus padding
+            // Get container dimensions
             const container = this.pageContainer;
-            const containerWidth = container.clientWidth - 40; // Minimal padding for shadow
+            const containerWidth = container.clientWidth - 60; // Padding for shadow
+            const containerHeight = Math.min(window.innerHeight * 0.7, 800); // Max 70vh or 800px
 
             // Get PDF page dimensions
             const viewport = page.getViewport({ scale: 1.0 });
             const pageWidth = viewport.width;
+            const pageHeight = viewport.height;
 
-            // Calculate scale to fit horizontally - fill the full width
-            const scale = containerWidth / pageWidth;
+            // Calculate scale to fit both horizontally and vertically
+            const scaleX = containerWidth / pageWidth;
+            const scaleY = containerHeight / pageHeight;
+            const scale = Math.min(scaleX, scaleY) * 0.95; // Use smaller scale to fit, 95% for margin
 
             // Create viewport with calculated scale
             const scaledViewport = page.getViewport({ scale: scale });
