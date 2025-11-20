@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html data-wf-page="64a82787dfc33bab698b18f0" data-wf-site="64a82787dfc33bab698b1929" data-wf-status="1">
+
+<head>
+  <meta charset="utf-8" />
+  <title>El Potrero Mexican Restaurant</title>
+  <meta
+    content="Discover authentic Mexican cuisine at El Potrero! Browse our delicious menu featuring traditional Mexican dishes and flavors."
+    name="description" />
+  <meta content="El Potrero - Mexican Restaurant" property="og:title" />
+  <meta
+    content="Discover authentic Mexican cuisine at El Potrero! Browse our delicious menu featuring traditional Mexican dishes and flavors."
+    property="og:description" />
+  <meta content="./images/vegan-x-restaurant-webflow-template.png" property="og:image" />
+  <meta content="El Potrero - Mexican Restaurant" property="twitter:title" />
+  <meta
+    content="Discover authentic Mexican cuisine at El Potrero! Browse our delicious menu featuring traditional Mexican dishes and flavors."
+    property="twitter:description" />
+  <meta content="./images/vegan-x-restaurant-webflow-template.png" property="twitter:image" />
+  <meta property="og:type" content="website" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="Webflow" name="generator" />
+  <link href="./css/webflow-style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script
+    type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
+  <link href="./images/el_potrero_logo.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="./images/el_potrero_logo.png" rel="apple-touch-icon" />
+  <link href="./images/el_potrero_logo.png" rel="icon" type="image/png" />
+  <style>
+    .w-webflow-badge {
+      display: none !important;
+    }
+
+    /* Logo hover effects */
+    .logo-hover-effect {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-hover-effect:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    /* Navigation menu adjustments */
+    .dropdown-wrapper .header-nav-link {
+      margin-right: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dropdown-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    /* Ensure dropdown appears on hover */
+    .dropdown-wrapper:hover .dropdown-column-wrapper {
+      display: block;
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+      pointer-events: auto;
+    }
+
+    /* Style dropdown items */
+    .dropdown-column-wrapper {
+      position: absolute;
+      z-index: 100;
+    }
+
+    .w--open {
+      display: block !important;
+    }
+
+    /* Journal-style menu viewer */
+    .journal-menu-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .journal-menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .journal-tab {
+      padding: 12px 32px;
+      background: #f5f5f5;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    .journal-tab:hover {
+      background: #e8e8e8;
+      transform: translateY(-2px);
+    }
+
+    .journal-tab.active {
+      background: #1a1410;
+      color: white;
+      border-color: #1a1410;
+    }
+
+    .journal-viewer {
+      position: relative;
+      perspective: 2000px;
+      margin: 0 auto;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .journal-book {
+      position: relative;
+      width: 100%;
+      height: 75vh;
+      max-height: 900px;
+      min-height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .journal-page-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .journal-page {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      background: white;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      outline: none;
+    }
+
+    .journal-page.flipping {
+      transform: rotateY(-180deg);
+    }
+
+    .journal-page img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      background: white;
+    }
+
+    .journal-page canvas {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      background: white;
+    }
+
+    .journal-iframe-container {
+      width: 100%;
+      height: 100%;
+      background: white;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      border: none;
+      outline: none;
+    }
+
+    .journal-iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+    }
+
+    .journal-loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+      color: #666;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .journal-loading a {
+      color: #1a1410;
+      text-decoration: underline;
+    }
+
+    .journal-navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .journal-nav-btn {
+      padding: 12px 24px;
+      background: #1a1410;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .journal-nav-btn:hover:not(:disabled) {
+      background: #30261f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 20, 16, 0.3);
+    }
+
+    .journal-nav-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .journal-page-info {
+      font-size: 16px;
+      color: #666;
+      font-weight: 500;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .journal-viewer {
+        max-width: 100%;
+      }
+
+      .journal-book {
+        height: 60vh;
+        min-height: 400px;
+      }
+
+      .journal-page {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .journal-navigation {
+        gap: 12px;
+      }
+
+      .journal-nav-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .journal-tab {
+        padding: 10px 24px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <script
+    type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
+</head>
+
+<body>
+  <div style="opacity:0" class="page-wrapper overflow-hidden">
+    <div class="loading-bar-wrapper">
+      <div class="loading-bar"></div>
+    </div>
+    <div data-w-id="3e4eae5f-c9fd-c051-dc9f-9317b4043bae" data-animation="default" data-collapse="medium"
+      data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="header-wrapper w-nav">
+      <div class="container-default w-container">
+        <div class="header-content-wrapper"><a href="./home-v1.html" class="header-logo-link w-nav-brand"><img
+              src="./images/el_potrero_logo.png" alt="Logo - El Potrero Mexican Restaurant" class="header-logo" /></a>
+          <div class="header-right-side">
+            <nav role="navigation" class="header-nav-menu-wrapper w-nav-menu">
+              <ul role="list" class="header-nav-menu-list">
+                <li class="header-nav-list-item"><a href="./home-v1.html" aria-current="page"
+                    class="header-nav-link w-nav-link w--current">Home</a></li>
+                <li class="header-nav-list-item"><a href="./about.html" class="header-nav-link w-nav-link">About</a>
+                </li>
+                <li class="header-nav-list-item">
+                  <div data-hover="true" data-delay="0" data-w-id="6a1b3ecb-2147-65fd-0c9e-6811a6cc567b"
+                    class="dropdown-wrapper w-dropdown">
+                    <div class="dropdown-toggle w-dropdown-toggle">
+                      <a href="./menu.html" class="header-nav-link w-nav-link"
+                        style="display: inline-block; padding-right: 0;">Menu</a>
+                    </div>
+                    <nav class="dropdown-column-wrapper w-dropdown-list">
+                      <div class="dropdown-pd pd-48px">
+                        <div class="w-layout-grid grid-2-columns dropdown-link-column">
+                          <a href="./menu.html#popular-dishes" class="dropdown-link w-dropdown-link">Popular Dishes</a>
+                          <a href="./menu.html#lunch-specials" class="dropdown-link w-dropdown-link">Lunch Specials</a>
+                          <a href="./menu.html#especialidades" class="dropdown-link w-dropdown-link">Especialidades El Potrero</a>
+                          <a href="./menu.html#appetizers-dips" class="dropdown-link w-dropdown-link">Sampler</a>
+                          <a href="./menu.html#street-tacos" class="dropdown-link w-dropdown-link">Street Tacos</a>
+                          <a href="./menu.html#quesadillas" class="dropdown-link w-dropdown-link">Quesadillas</a>
+                          <a href="./menu.html#enchiladas" class="dropdown-link w-dropdown-link">Enchiladas</a>
+                          <a href="./menu.html#salads" class="dropdown-link w-dropdown-link">Salads</a>
+                          <a href="./menu.html#fajitas" class="dropdown-link w-dropdown-link">Fajitas</a>
+                          <a href="./menu.html#burritos" class="dropdown-link w-dropdown-link">Burritos</a>
+                          <a href="./menu.html#seafood" class="dropdown-link w-dropdown-link">Seafood</a>
+                          <a href="./menu.html#veggie" class="dropdown-link w-dropdown-link">Veggie</a>
+                          <a href="./menu.html#parrillada-seafood" class="dropdown-link w-dropdown-link">Parrillada</a>
+                          <a href="./menu.html#combos" class="dropdown-link w-dropdown-link">Combos</a>
+                          <a href="./menu.html#drinks" class="dropdown-link w-dropdown-link">Drinks</a>
+                          <a href="./menu.html#sides" class="dropdown-link w-dropdown-link">Sides</a>
+                          <a href="./menu.html#dips" class="dropdown-link w-dropdown-link">Dips</a>
+                          <a href="./menu.html#a-la-carte" class="dropdown-link w-dropdown-link">A La Carte</a>
+                          <a href="./menu.html#nachos" class="dropdown-link w-dropdown-link">Nachos</a>
+                          <a href="./menu.html#kids" class="dropdown-link w-dropdown-link">Kids (Niños)</a>
+                          <a href="./menu.html#desserts" class="dropdown-link w-dropdown-link">Desserts</a>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </li>
+                <li class="header-nav-list-item show-in-tablet header-button"><a
+                    class="btn-primary small w-button">Order online</a></li>
+              </ul>
+            </nav>
+            <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="modal"
+              data-wf-cart-query="query Dynamo2 {
+  database {
+    id
+    commerceOrder {
+      comment
+      extraItems {
+        name
+        pluginId
+        pluginName
+        price {
+          value
+          unit
+          decimalValue
+          string
+        }
+      }
+      id
+      startedOn
+      statusFlags {
+        hasDownloads
+        hasSubscription
+        isFreeOrder
+        requiresShipping
+      }
+      subtotal {
+        value
+        unit
+        decimalValue
+        string
+      }
+      total {
+        value
+        unit
+        decimalValue
+        string
+      }
+      updatedOn
+      userItems {
+        count
+        id
+        price {
+          value
+          unit
+          decimalValue
+          string
+        }
+        product {
+          id
+          cmsLocaleId
+          f__draft_0ht
+          f__archived_0ht
+          f_ec_product_type_2dr10dr {
+            id
+            name
+          }
+          f_name_
+          f_sku_properties_3dr {
+            id
+            name
+            enum {
+              id
+              name
+              slug
+            }
+          }
+          fullSlug
+        }
+        rowTotal {
+          value
+          unit
+          decimalValue
+          string
+        }
+        sku {
+          cmsLocaleId
+          f__draft_0ht
+          f__archived_0ht
+          f_main_image_4dr {
+            url
+            file {
+              size
+              origFileName
+              createdOn
+              updatedOn
+              mimeType
+              width
+              height
+              variants {
+                origFileName
+                quality
+                height
+                width
+                s3Url
+                error
+                size
+              }
+            }
+            alt
+          }
+          f_sku_values_3dr {
+            property {
+              id
+            }
+            value {
+              id
+            }
+          }
+          id
+        }
+        subscriptionFrequency
+        subscriptionInterval
+        subscriptionTrial
+      }
+      userItemsCount
+    }
+  }
+  site {
+    id
+    commerce {
+      businessAddress {
+        country
+      }
+      defaultCountry
+      defaultCurrency
+      quickCheckoutEnabled
+    }
+  }
+}" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart-wrapper">
+              <div data-node-type="commerce-cart-container-wrapper" style="display:none"
+                class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-modal">
+                <div role="dialog" data-node-type="commerce-cart-container"
+                  class="w-commerce-commercecartcontainer cart-container">
+                  <div class="w-commerce-commercecartheader cart-header">
+                    <h4 class="w-commerce-commercecartheading">Your Cart</h4><a href="#"
+                      data-node-type="commerce-cart-close-link" role="button" aria-label="Close cart"
+                      class="w-commerce-commercecartcloselink close-button w-inline-block">
+                      <div class="line-rounded-icon"></div>
+                    </a>
+                  </div>
+                  <div class="w-commerce-commercecartformwrapper">
+                    <form data-node-type="commerce-cart-form" style="display:none" class="w-commerce-commercecartform">
+                      <script type="text/x-wf-template"
+                        id="wf-template-3e38e64a-0aec-7aa2-adb1-11ecf1a9981f">%3Cdiv%20class%3D%22w-commerce-commercecartitem%20cart-item%22%3E%3Cdiv%20class%3D%22cart-item-content---main%22%3E%3Ca%20data-wf-bindings%3D%22%255B%257B%2522dataWHref%2522%253A%257B%2522type%2522%253A%2522FullSlug%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.fullSlug%2522%257D%257D%255D%22%20data-wf-conditions%3D%22%257B%2522condition%2522%253A%257B%2522fields%2522%253A%7B%22sku%3Amain-image%2522%253A%257B%2522exists%2522%253A%2522yes%2522%252C%2522type%2522%253A%2522ImageRef%2522%257D%257D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D%2522%257D%22%20href%3D%22%23%22%20class%3D%22cart-item-image%20w-inline-block%22%3E%3Cimg%20data-wf-bindings%3D%22%255B%257B%2522src%2522%253A%257B%2522type%2522%253A%2522ImageRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_main_image_4dr%2522%257D%257D%252C%7B%22alt%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_name_%2522%257D%257D%255D%22%20src%3D%22%22%20alt%3D%22%22%20class%3D%22w-commerce-commercecartitemimage%20_w-h-100%20fit-cover%20w-dyn-bind-empty%22%2F%3E%3C%2Fa%3E%3Cdiv%20class%3D%22w-commerce-commercecartiteminfo%20cart-item-content%22%3E%3Ca%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_name_%2522%257D%257D%252C%257B%2522dataWHref%2522%253A%257B%2522type%2522%253A%2522FullSlug%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.fullSlug%2522%257D%257D%255D%22%20href%3D%22%23%22%20class%3D%22heading-h5-size%20cart-item-title%20w-dyn-bind-empty%22%3E%3C%2Fa%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePrice%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522price%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.price%2522%257D%7D%255D%22%20class%3D%22color-neutral-800%22%3E%24%C2%A00.00%C2%A0USD%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fx-wf-template%22%20id%3D%22wf-template-3e38e64a-0aec-7aa2-adb1-11ecf1a99827%22%3E%253Cli%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522PlainText%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D.name%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253Cspan%253E%253A%2520%253C%252Fspan%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522CommercePropValues%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253C%252Fli%253E%3C%2Fscript%3E%3Cul%20data-wf-bindings%3D%22%255B%257B%2522optionSets%2522%253A%257B%2522type%2522%253A%2522CommercePropTable%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D%2522%257D%7D%2C%7B%22optionValues%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_sku_values_3dr%2522%257D%7D%5D%22%20class%3D%22w-commerce-commercecartoptionlist%20hidden-on-desktop%22%20data-wf-collection%3D%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%22%20data-wf-template-id%3D%22wf-template-3e38e64a-0aec-7aa2-adb1-11ecf1a99827%22%3E%3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D.name%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%255D%22%7D%7D%5D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3Ca%20href%3D%22%23%22%20role%3D%22button%22%20aria-label%3D%22Remove%20item%20from%20cart%22%20data-wf-bindings%3D%22%255B%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20class%3D%22remove-button%20w-inline-block%22%20data-wf-cart-action%3D%22remove-item%22%20data-commerce-sku-id%3D%22%22%3E%3Cdiv%3ERemove%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cinput%20aria-label%3D%22Update%20quantity%22%20data-wf-bindings%3D%22%255B%257B%2522value%2522%253A%257B%2522type%2522%253A%2522Number%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522numberPrecision%2522%252C%2522params%2522%253A%255B%25220%2522%252C%2522numberPrecision%2522%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.count%2522%257D%7D%2C%7B%22data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20data-wf-conditions%3D%22%257B%2522condition%2522%253A%7B%22fields%2522%253A%7B%22product%3Aec-product-type%2522%253A%257B%2522ne%2522%253A%2522e348fd487d0102946c9179d2a94bb613%2522%252C%2522type%2522%253A%2522Option%2522%257D%257D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D%2522%257D%22%20class%3D%22w-commerce-commercecartquantity%20input%20cart-item-quantity%22%20required%3D%22%22%20pattern%3D%22%5E%5B0-9%5D%2B%24%22%20inputMode%3D%22numeric%22%20type%3D%22number%22%20name%3D%22quantity%22%20autoComplete%3D%22off%22%20data-wf-cart-action%3D%22update-item-quantity%22%20data-commerce-sku-id%3D%22%22%20value%3D%221%22%2F%3E%3C%2Fdiv%3E</script>
+                      <div class="w-commerce-commercecartlist cart-list"
+                        data-wf-collection="database.commerceOrder.userItems"
+                        data-wf-template-id="wf-template-3e38e64a-0aec-7aa2-adb1-11ecf1a9981f">
+                        <div class="w-commerce-commercecartitem cart-item">
+                          <div class="cart-item-content---main"><a
+                              data-wf-bindings="%5B%7B%22dataWHref%22%3A%7B%22type%22%3A%22FullSlug%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.product.fullSlug%22%7D%7D%5D"
+                              data-wf-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22sku%3Amain-image%22%3A%7B%22exists%22%3A%22yes%22%2C%22type%22%3A%22ImageRef%22%7D%7D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D%22%7D"
+                              href="#" class="cart-item-image w-inline-block"><img
+                                data-wf-bindings="%5B%7B%22src%22%3A%7B%22type%22%3A%22ImageRef%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.sku.f_main_image_4dr%22%7D%7D%2C%7B%22alt%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%5B%5D.product.f_name_%22%7D%7D%5D"
+                                src="" alt=""
+                                class="w-commerce-commercecartitemimage _w-h-100 fit-cover w-dyn-bind-empty" /></a>
+                            <div class="w-commerce-commercecartiteminfo cart-item-content"><a
+                                data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.product.f_name_%22%7D%7D%2C%7B%22dataWHref%22%3A%7B%22type%22%3A%22FullSlug%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.product.fullSlug%22%7D%7D%5D"
+                                href="#" class="heading-h5-size cart-item-title w-dyn-bind-empty"></a>
+                              <div
+                                data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.price%22%7D%7D%5D"
+                                class="color-neutral-800">$ 0.00 USD</div>
+                              <script type="text/x-wf-template"
+                                id="wf-template-3e38e64a-0aec-7aa2-adb1-11ecf1a99827">%3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3C%2Fli%3E</script>
+                              <ul
+                                data-wf-bindings="%5B%7B%22optionSets%22%3A%7B%22type%22%3A%22CommercePropTable%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr[]%22%7D%7D%2C%7B%22optionValues%22%3A%7B%22type%22%3A%22CommercePropValues%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.sku.f_sku_values_3dr%22%7D%7D%5D"
+                                class="w-commerce-commercecartoptionlist hidden-on-desktop"
+                                data-wf-collection="database.commerceOrder.userItems%5B%5D.product.f_sku_properties_3dr"
+                                data-wf-template-id="wf-template-3e38e64a-0aec-7aa2-adb1-11ecf1a99827">
+                                <li><span
+                                    data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D.name%22%7D%7D%5D"
+                                    class="w-dyn-bind-empty"></span><span>: </span><span
+                                    data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePropValues%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%255D%22%7D%7D%5D"
+                                    class="w-dyn-bind-empty"></span></li>
+                              </ul><a href="#" role="button" aria-label="Remove item from cart"
+                                data-wf-bindings="%5B%7B%22data-commerce-sku-id%22%3A%7B%22type%22%3A%22ItemRef%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.sku.id%22%7D%7D%5D"
+                                class="remove-button w-inline-block" data-wf-cart-action="remove-item"
+                                data-commerce-sku-id="">
+                                <div>Remove</div>
+                              </a>
+                            </div>
+                          </div><input aria-label="Update quantity"
+                            data-wf-bindings="%5B%7B%22value%22%3A%7B%22type%22%3A%22Number%22%2C%22filter%22%3A%7B%22type%22%3A%22numberPrecision%22%2C%22params%22%3A%5B%220%22%2C%22numberPrecision%22%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.count%22%7D%7D%2C%7B%22data-commerce-sku-id%22%3A%7B%22type%22%3A%22ItemRef%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D.sku.id%22%7D%7D%5D"
+                            data-wf-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22product%3Aec-product-type%22%3A%7B%22ne%22%3A%22e348fd487d0102946c9179d2a94bb613%22%2C%22type%22%3A%22Option%22%7D%7D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems%255B%255D%2522%7D"
+                            class="w-commerce-commercecartquantity input cart-item-quantity" required=""
+                            pattern="^[0-9]+$" inputMode="numeric" type="number" name="quantity" autoComplete="off"
+                            data-wf-cart-action="update-item-quantity" data-commerce-sku-id="" value="1" />
+                        </div>
+                      </div>
+                      <div class="w-commerce-commercecartfooter cart-footer">
+                        <div aria-atomic="true" aria-live="polite"
+                          class="w-commerce-commercecartlineitem cart-line-item">
+                          <div>Subtotal</div>
+                          <div
+                            data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.subtotal%22%7D%7D%5D"
+                            class="w-commerce-commercecartordervalue color-neutral-800"></div>
+                        </div>
+                        <div>
+                          <div data-node-type="commerce-cart-quick-checkout-actions" style="display:none"><a
+                              data-node-type="commerce-cart-apple-pay-button" role="button" tabindex="0"
+                              aria-label="Apple Pay" aria-haspopup="dialog"
+                              style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat"
+                              class="w-commerce-commercecartapplepaybutton button-pay cart-btn" tabindex="0">
+                              <div></div>
+                            </a><a data-node-type="commerce-cart-quick-checkout-button" role="button" tabindex="0"
+                              aria-haspopup="dialog" style="display:none"
+                              class="w-commerce-commercecartquickcheckoutbutton button-pay cart-btn"><svg
+                                class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                <defs>
+                                  <polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon>
+                                  <polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443">
+                                  </polygon>
+                                </defs>
+                                <g fill="none" fill-rule="evenodd">
+                                  <path fill="#4285F4"
+                                    d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469">
+                                  </path>
+                                  <path fill="#34A853"
+                                    d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16">
+                                  </path>
+                                  <g transform="translate(0 4)">
+                                    <mask id="google-mark-b" fill="#fff">
+                                      <use xlink:href="#google-mark-a"></use>
+                                    </mask>
+                                    <path fill="#FBBC04"
+                                      d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337"
+                                      mask="url(#google-mark-b)"></path>
+                                  </g>
+                                  <mask id="google-mark-d" fill="#fff">
+                                    <use xlink:href="#google-mark-c"></use>
+                                  </mask>
+                                  <path fill="#EA4335"
+                                    d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291"
+                                    mask="url(#google-mark-d)"></path>
+                                </g>
+                              </svg><svg class="w-commerce-commercequickcheckoutmicrosofticon"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <g fill="none" fill-rule="evenodd">
+                                  <polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon>
+                                  <polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon>
+                                  <polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon>
+                                  <polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon>
+                                </g>
+                              </svg>
+                              <div>Pay with browser.</div>
+                            </a></div><a href="/checkout" value="Continue to Checkout"
+                            data-node-type="cart-checkout-button"
+                            class="w-commerce-commercecartcheckoutbutton btn-primary small"
+                            data-loading-text="Hang Tight...">Continue to Checkout</a>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="w-commerce-commercecartemptystate flex-vertical cart-empty">
+                      <div aria-live="polite" aria-label="This cart is empty" class="mg-bottom-24px">No items found.
+                      </div><a
+                        href="https://www.doordash.com/store/el-potrero-mexican-restaurant-&-grill-oxford-31185971/44592248/?srsltid=AfmBOoo96fAW6oYG_DDHxDwsp2dEr9lcPZKAgt390lVSNDzrSh36xyh0"
+                        class="btn-primary small w-button">Order online</a>
+                    </div>
+                    <div aria-live="assertive" style="display:none" data-node-type="commerce-cart-error"
+                      class="w-commerce-commercecarterrorstate error-message cart-error">
+                      <div class="w-cart-error-msg"
+                        data-w-cart-quantity-error="Product is not available in this quantity."
+                        data-w-cart-general-error="Something went wrong when adding this item to the cart."
+                        data-w-cart-checkout-error="Checkout is disabled on this site."
+                        data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue."
+                        data-w-cart-subscription_error-error="Before you purchase, please use your email invite to verify your address so we can send order updates.">
+                        Product is not available in this quantity.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><a
+              href="https://www.doordash.com/store/el-potrero-mexican-restaurant-&-grill-oxford-31185971/44592248/?srsltid=AfmBOoo96fAW6oYG_DDHxDwsp2dEr9lcPZKAgt390lVSNDzrSh36xyh0"
+              class="btn-primary small header-btn-hidde-on-tablet w-button" target="_blank">Order online</a>
+            <div class="hamburger-menu-wrapper w-nav-button">
+              <div class="hamburger-menu-bar top"></div>
+              <div class="hamburger-menu-bar medium"></div>
+              <div class="hamburger-menu-bar bottom"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="section hero v1">
+      <div class="container-default w-container">
+        <div class="w-layout-grid grid-2-columns hero-v1">
+          <div class="inner-container _600px---mbl">
+            <h1 data-w-id="e23c6298-b00e-90e9-0017-bda6a155f5dc"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="display-1 mg-bottom-32px">Only Place in Oxford with Quesabirria</h1>
+            <div data-w-id="bdb3e715-b451-0818-b8fb-815b69c7aa4b"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="max-w-560px">
+              <div class="inner-container _500px---mbl">
+                <p class="mg-bottom-48px">At El Potrero, we slow-cook our beef for four hours, layer it with melty
+                  cheese, and fold it into fresh-made tortillas. It's not a quesadilla. It's not a taco. It's
+                  Quesabirria — and it's only here.
+                </p>
+              </div>
+            </div>
+            <div data-w-id="e23c6298-b00e-90e9-0017-bda6a155f5e0" style="opacity:0" class="buttons-row"><a
+                href="tel:+15132559271" class="btn-primary button-row w-button">Reserve a Table</a><a
+                href="https://www.doordash.com/store/el-potrero-mexican-restaurant-&-grill-oxford-31185971/44592248/?srsltid=AfmBOoo96fAW6oYG_DDHxDwsp2dEr9lcPZKAgt390lVSNDzrSh36xyh0"
+                class="btn-secondary w-button" target="_blank">Order online</a></div>
+          </div>
+        </div>
+        <div data-w-id="e23c6298-b00e-90e9-0017-bda6a155f5e5" style="opacity:0" class="image-hero-v1"><img
+            src="./images/Quesabirria_test.jpg" alt="Vegan Burger - Vegan X Webflow Template"
+            class="_w-h-100 fit-cover" />
+          <div class="image-hero-v1-bg"></div>
+        </div>
+        <div class="gradient-hero-v1"></div>
+      </div>
+      <div class="bg-wrapper strip-bg---wrapper">
+        <div data-w-id="5772ee5f-b348-70d2-2ef9-1471b32e5db1" class="bg-wrapper strip-bg">
+          <div data-w-id="5772ee5f-b348-70d2-2ef9-1471b32e5db2" class="text-slider-container-top---wrapper">
+            <div class="text-slider-container-top">
+              <div class="slider-container">
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Lunch Specials</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Especialidades El Potrero</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Street Tacos</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Quesadillas</div>
+                </div>
+              </div>
+              <div class="slider-container">
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Burritos</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Combos</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Fajitas</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Enchiladas</div>
+                </div>
+              </div>
+              <div class="slider-container">
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Parrillada</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Seafood</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Nachos</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Salads</div>
+                </div>
+              </div>
+              <div class="slider-container">
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Appetizers & Dips</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Veggie</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Kids (Niños)</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">A La Carte</div>
+                </div>
+              </div>
+              <div class="slider-container">
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Sides</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Drinks</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Desserts</div>
+                </div>
+                <div class="slide-wrapper">
+                  <div class="circle mg-right-24px"></div>
+                  <div class="display-2 color-neutral-100">Order online</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section data-w-id="c4033983-a6ec-2c09-5f62-5dc9a34d446e" class="section logo-strips">
+      <div class="container-default w-container">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 48px;">
+          <div class="inner-container" style="flex: 1;">
+            <h2 class="display-2 mg-bottom-0">Order Your Favorites</h2>
+          </div>
+          <div style="display: flex; justify-content: flex-end; align-items: center; gap: 48px;">
+            <div class="slide logo-strip-logo _02">
+              <a href="https://www.doordash.com/store/el-potrero-mexican-restaurant-&-grill-oxford-31185971/44592248/?srsltid=AfmBOoo96fAW6oYG_DDHxDwsp2dEr9lcPZKAgt390lVSNDzrSh36xyh0"
+                target="_blank" class="logo-strip---logo-wrapper" style="text-decoration: none;">
+                <img alt="Doordash - El Potrero" height="" src="./images/doordash-logo.svg"
+                  class="logo-wrapper logo-hover-effect" />
+              </a>
+            </div>
+            <!-- <div class="slide logo-strip-logo _03">
+              <a href="https://www.oxfordtoyou.com/r/951/restaurants/delivery/Mexican-Grill/EL-POTRERO-Oxford"
+                target="_blank" class="logo-strip---logo-wrapper" style="text-decoration: none;">
+                <img alt="Oxford To You - El Potrero" height="" src="./images/oxford_to_you_logo.png"
+                  class="logo-wrapper logo-hover-effect" />
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section pd-180px pd-top-0px">
+      <div class="container-default w-container">
+        <div class="w-layout-grid grid-2-columns _1-col-tablet gap-row-80px">
+          <div class="inner-container _600px _100-tablet">
+            <h2 data-w-id="f39da4aa-d618-3da7-44cd-60492f64f392"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="display-2">Made by a Mexican Family. Cooked for Oxford.</h2>
+            <div data-w-id="d2a9ab77-a788-4102-a120-895f012fa9d6"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)">
+              <p>Our family recipes were born in a tiny kitchen, cooked slow by our mom, seasoned by our dad, and
+                taste-tested by us kids. Today, we bring those same flavors to Oxford: juicy meats, homemade spice
+                blends, and tortillas pressed fresh every day.</span>
+              </p>
+              <blockquote class="mg-bottom-24px mg-top-24px"
+                style="font-style: italic; color: #ffffff !important; border-left: 8px solid #58402c; padding: 25px 30px; background-color: #8a663f; border-radius: 4px; margin: 30px 0; font-size: 22px;">
+                <p style="color: #ffffff !important; font-weight: 500;">"Mi Casa Es Tu Casa — My home is your home. When
+                  you eat at El
+                  Potrero, you're not just a customer,
+                  you're part of our family."</p>
+                <p
+                  style="text-align: right; margin-top: 15px; font-size: 20px; color: #ffffff !important; font-weight: 500;">
+                  — El Potrero Family</p>
+              </blockquote>
+            </div>
+            <div data-w-id="f39da4aa-d618-3da7-44cd-60492f64f396"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="buttons-row"><a href="./about.html" class="btn-primary button-row w-button">About us</a><a
+                href="./menu.html" class="btn-secondary w-button">Browse menu</a></div>
+          </div>
+          <div id="w-node-c7eef5d2-d683-4fd5-92a2-794f1c5c3419-698b18f0" class="inner-container _558px _100-tablet">
+            <div class="_2-images---flex-horizontal">
+              <div data-w-id="1a19c5d0-5e46-7381-3365-e45cb52ddc40" style="opacity:0" class="image-floating---01"><img
+                  src="./images/11.jpg" alt="Burritos - Vegan X Webflow Template" class="_w-h-100 fit-cover" /></div>
+              <div data-w-id="14624cdc-3dfa-8271-4f8d-b16dcc5af3a9" style="opacity:0" class="image-floating---02"><img
+                  src="./images/28.jpg" alt="Hamburger - Vegan X Webflow Template" class="_w-h-100 fit-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section pd-top-0px">
+      <div class="container-default w-container">
+        <div data-w-id="9b639160-12cf-381a-7b82-f7202fea99e6"
+          style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+          class="inner-container _864px center">
+          <div class="inner-container _800px---tablet center">
+            <div class="inner-container _600px---mbl center">
+              <div class="text-center mg-bottom-24px mg-bottom-24px---mbl">
+                <h2 class="display-2 mg-bottom-0">Check Out Our Delicious And Authentic Mexican Menu</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="journal-menu-container">
+          <div class="journal-menu-tabs">
+            <button class="journal-tab active" data-menu="lunch">Lunch Menu</button>
+            <button class="journal-tab" data-menu="main">Main Menu</button>
+          </div>
+          <div class="journal-viewer">
+            <div class="journal-book">
+              <div class="journal-page-container">
+                <div class="journal-page" id="journalPage">
+                  <div class="journal-loading">Loading menu...</div>
+                </div>
+                <!-- Fallback iframe for local files -->
+                <div class="journal-iframe-container" id="journalIframe" style="display: none;">
+                  <iframe id="pdfIframe" src="" width="100%" height="800px"
+                    style="border: none; border-radius: 4px;"></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="journal-navigation" id="journalNav" style="display: none;">
+              <button class="journal-nav-btn" id="prevPage" disabled>
+                <span>←</span> Previous
+              </button>
+              <div class="journal-page-info" id="pageInfo">Page 1 of 1</div>
+              <button class="journal-nav-btn" id="nextPage">
+                Next <span>→</span>
+              </button>
+            </div>
+            <div class="journal-browse-btn" style="margin-top: 32px; text-align: center;">
+              <a href="./menu.html" class="btn-secondary w-button">Browse Menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section pd-0px position-relative---overflow-hidden">
+      <div class="container-default w-container">
+        <div class="w-layout-grid grid-2-columns grid-content---image-right">
+          <div class="cta-v1-content">
+            <h2 data-w-id="7c30ba0c-a72f-460f-fe37-f3327b92b894"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="display-2 color-neutral-100 mg-bottom-24px">Family-Tested Recipes You Can Only Get Here</h2>
+            <div class="inner-container _513px">
+              <p data-w-id="7c30ba0c-a72f-460f-fe37-f3327b92b896"
+                style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                class="color-neutral-100 mg-bottom-24px"><span style="color: #ffffff; font-weight: 700;">Exclusive
+                  dishes</span> – Our Quesabirria, Chorizo For You, and Azteca Especial are recipes Mom and Dad
+                perfected over decades—no one else in Oxford makes them.</p>
+              <p data-w-id="7c30ba0c-a72f-460f-fe37-f3327b92b896"
+                style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                class="color-neutral-100 mg-bottom-24px"><span style="color: #ffffff; font-weight: 700;">Made fresh
+                  every morning</span> – Produce arrives daily, tortillas hit the press when you order, and every salsa
+                and side is batch-cooked before service.</p>
+              <p data-w-id="7c30ba0c-a72f-460f-fe37-f3327b92b896"
+                style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                class="color-neutral-100 mg-bottom-48px"><span style="color: #ffffff; font-weight: 700;">Dining with
+                  family</span> – The Silva family runs the line, greets every guest, and fixes portions large enough to
+                share—because "Mi casa es tu casa."</p>
+            </div>
+            <div data-w-id="7c30ba0c-a72f-460f-fe37-f3327b92b898"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="buttons-row"><a
+                href="https://www.doordash.com/store/el-potrero-mexican-restaurant-&-grill-oxford-31185971/44592248/?srsltid=AfmBOoo96fAW6oYG_DDHxDwsp2dEr9lcPZKAgt390lVSNDzrSh36xyh0"
+                target="_blank" class="btn-primary bg---border-white button-row w-button">Order Your Favorites</a><a
+                href="./menu.html" class="btn-secondary white---line w-button">Browse Menu</a></div>
+          </div>
+        </div>
+      </div>
+      <div data-w-id="7c30ba0c-a72f-460f-fe37-f3327b92b89f"
+        style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+        class="image-full-with-right"><img src="./images/18.jpg"
+          alt="Order The Perfect Vegan Meal - Vegan X Webflow Template" class="_w-h-100 fit-cover" /></div>
+      <div class="bg-wrapper full-bg cta-v1">
+        <div class="bg---top _0px"></div>
+        <div class="bg---bottom _0px"></div>
+      </div>
+    </section>
+    <section class="section overflow-hidden">
+      <div class="container-default w-container">
+        <div class="inner-container _1054px center">
+          <div data-w-id="e79ea761-9e9d-87d8-e7fe-170be22924ee"
+            style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="inner-container _785px center">
+            <div class="inner-container _600px---mbl center">
+              <div class="text-center mg-bottom-48px">
+                <h2 class="display-2 mg-bottom-24px">See Why Oxford Chooses El Potrero</h2>
+                <p class="mg-bottom-0">Real feedback from friends who've stopped by El Potrero for the best Mexican food
+                  in Oxford.</p>
+              </div>
+            </div>
+          </div>
+          <div data-delay="4000" data-animation="cross" class="slider-wrapper w-slider" data-autoplay="false"
+            data-easing="ease"
+            style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            data-hide-arrows="false" data-disable-swipe="false" data-w-id="e79ea761-9e9d-87d8-e7fe-170be22924f4"
+            data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div id="google-reviews-testimonials" class="slider-mask pd-left-right-19px w-slider-mask">
+              <!-- Static Review 1 -->
+              <div class="slide-item-mg testimonial-card---item w-slide">
+                <div class="card content-center testimonial-v1">
+                  <div class="inner-container _350px---mbl">
+                    <h3 class="heading-h2-size mg-bottom-24px">"Thank you so much to El Potrero for sponsoring a meal
+                      for the teachers and staff at Kramer Elementary. Alfonso was so nice and was super excited to
+                      support the school. The food was amazing!!! The staff/teachers absolutely loved it. The tacos,
+                      quesadillas, queso, steak fajitas, salsa, veggie fajitas, and rice were amazing. We are grateful
+                      for you guys!"</h3>
+                  </div>
+                  <div class="mg-bottom-24px">
+                    <div class="avatar-circle _06"
+                      style="background-color: #F0E9E4; display: flex; justify-content: center; align-items: center; color: #333; font-size: 24px; font-weight: 600;">
+                      <div>CS</div>
+                    </div>
+                  </div>
+                  <div class="inner-container _400px---mbl">
+                    <div class="text-center">
+                      <h4 class="heading-h4-size mg-bottom-16px">Chauncey Smith</h4>
+                      <p class="mg-bottom-0">Rating: 5 / 5</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Static Review 2 -->
+              <div class="slide-item-mg testimonial-card---item w-slide">
+                <div class="card content-center testimonial-v1">
+                  <div class="inner-container _350px---mbl">
+                    <h3 class="heading-h2-size mg-bottom-24px">"I’ve been coming here since the week they opened, and
+                      the quality has consistently been incredible the whole time they’ve been open. The food is amazing
+                      and is priced very reasonably. The family who owns it is always incredibly friendly and helpful,
+                      this is 100% the best place to get Mexican food in Oxford, whether you eat inside or get takeout.
+                      It’s always incredible!"</h3>
+                  </div>
+                  <div class="mg-bottom-24px">
+                    <div class="avatar-circle _06"
+                      style="background-color: #F0E9E4; display: flex; justify-content: center; align-items: center; color: #333; font-size: 24px; font-weight: 600;">
+                      <div>M</div>
+                    </div>
+                  </div>
+                  <div class="inner-container _400px---mbl">
+                    <div class="text-center">
+                      <h4 class="heading-h4-size mg-bottom-16px">maggie</h4>
+                      <p class="mg-bottom-0">Rating: 5 / 5</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Static Review 3 -->
+              <div class="slide-item-mg testimonial-card---item w-slide">
+                <div class="card content-center testimonial-v1">
+                  <div class="inner-container _350px---mbl">
+                    <h3 class="heading-h2-size mg-bottom-24px">"Moving from California to here its always been difficult
+                      to find food as close to home for me personally; would highly recommend this place soo much more
+                      than the other places here in town!! It felt like I was eating in California again despite it
+                      being empty when we visited."</h3>
+                  </div>
+                  <div class="mg-bottom-24px">
+                    <div class="avatar-circle _06"
+                      style="background-color: #F0E9E4; display: flex; justify-content: center; align-items: center; color: #333; font-size: 24px; font-weight: 600;">
+                      <div>CL</div>
+                    </div>
+                  </div>
+                  <div class="inner-container _400px---mbl">
+                    <div class="text-center">
+                      <h4 class="heading-h4-size mg-bottom-16px">Carrie “Cali” L.</h4>
+                      <p class="mg-bottom-0">Rating: 5 / 5</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Static Review 4 -->
+              <div class="slide-item-mg testimonial-card---item w-slide">
+                <div class="card content-center testimonial-v1">
+                  <div class="inner-container _350px---mbl">
+                    <h3 class="heading-h2-size mg-bottom-24px">"Loved coming here! Food was great and the service was
+                      quick and friendly. I ordered the chicken quesadilla and the horchata! Definitely recommend
+                      checking this place out."</h3>
+                  </div>
+                  <div class="mg-bottom-24px">
+                    <div class="avatar-circle _06"
+                      style="background-color: #F0E9E4; display: flex; justify-content: center; align-items: center; color: #333; font-size: 24px; font-weight: 600;">
+                      <div>AE</div>
+                    </div>
+                  </div>
+                  <div class="inner-container _400px---mbl">
+                    <div class="text-center">
+                      <h4 class="heading-h4-size mg-bottom-16px">Adriana Enriquez</h4>
+                      <p class="mg-bottom-0">Rating: 5 / 5</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-circle-secondary slider-arrow left w-slider-arrow-left">
+              <div class="line-rounded-icon"></div>
+            </div>
+            <div class="btn-circle-secondary slider-arrow right w-slider-arrow-right">
+              <div class="line-rounded-icon"></div>
+            </div>
+            <div class="hidden-on-desktop w-slider-nav w-round"></div>
+          </div>
+          <div class="mg-top-48px">
+            <div data-w-id="d1d94fc3-d94d-e406-fc8e-8b0dd745301a"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="buttons-row center">
+              <a href="https://www.google.com/maps/place/?q=place_id:ChIJDyz0Y4o9QIgRnNVdOSj36p4" target="_blank"
+                class="btn-primary button-row w-button">Leave Us Your Feedback</a>
+              <a href="https://www.google.com/maps/place/?q=place_id:ChIJDyz0Y4o9QIgRnNVdOSj36p4" target="_blank"
+                class="btn-secondary w-button">See All Reviews on Google</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="section pd-180px pd-top-0px">
+      <div class="container-default w-container">
+        <div class="mg-bottom-48px">
+          <div class="text-center---tablet">
+            <div data-w-id="f867b48a-701a-b73c-9be1-8787866cb639"
+              style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="w-layout-grid grid-2-columns _1-col-tablet">
+              <h2 class="display-2 mg-bottom-0">Our articles</h2>
+              <div id="w-node-_6ee42f2c-6459-e777-545a-4bad24f0bcee-698b18f0"><a
+                  data-w-id="803c5e25-1934-e405-d77e-5a6191287182" href="/blog-pages/blog-v1"
+                  class="btn-primary w-inline-block">
+                  <div>View all articles<span class="line-rounded-icon link-icon-right"></span></div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="w-dyn-list">
+          <div role="list" class="grid-2-columns gap-row-64px w-dyn-items">
+            <div id="w-node-f867b48a-701a-b73c-9be1-8787866cb649-698b18f0" role="listitem"
+              class="filter-sibling-item w-dyn-item"><a data-w-id="f867b48a-701a-b73c-9be1-8787866cb64a"
+                style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                href="/blog/10-delicious-vegan-options-on-our-fast-food-menu" class="post-link-block w-inline-block">
+                <div class="post-card-image-wrapper mg-bottom-24px"><img
+                    src="./images/10-delicious-vegan-options-on-our-fast-vegan-x-webflow-template.jpg"
+                    alt="10 delicious vegan options on our fast food menu" class="post-card-image v1" />
+                  <div class="post-card-badge-wrapper-top">
+                    <div class="btn-circle-primary arrow-card-blog">
+                      <div class="line-rounded-icon"></div>
+                    </div>
+                  </div>
+                  <div class="blog-card-badge-wrapper-bot">
+                    <div class="badge-secondary small border-secondary-color-3">February 7, 2024</div>
+                  </div>
+                </div>
+                <div class="inner-container _450px---mbl">
+                  <div class="inner-container _548px">
+                    <h3 class="blog-card-title heading-h2-size mg-bottom-16px">10 delicious vegan options on our fast
+                      food menu</h3>
+                    <div class="inner-container _493px">
+                      <p class="mg-bottom-0">Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae
+                        velit.</p>
+                    </div>
+                  </div>
+                </div>
+              </a></div>
+            <div id="w-node-f867b48a-701a-b73c-9be1-8787866cb649-698b18f0" role="listitem"
+              class="filter-sibling-item w-dyn-item"><a data-w-id="f867b48a-701a-b73c-9be1-8787866cb64a"
+                style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                href="/blog/the-importance-of-vegan-food-in-the-fast-food-industry"
+                class="post-link-block w-inline-block">
+                <div class="post-card-image-wrapper mg-bottom-24px"><img
+                    src="./images/the-importance-of-vegan-food-vegan-x-webflow-template.jpg"
+                    alt="The importance of vegan food in the fast food industry" class="post-card-image v1" />
+                  <div class="post-card-badge-wrapper-top">
+                    <div class="btn-circle-primary arrow-card-blog">
+                      <div class="line-rounded-icon"></div>
+                    </div>
+                  </div>
+                  <div class="blog-card-badge-wrapper-bot">
+                    <div class="badge-secondary small border-secondary-color-3">February 7, 2024</div>
+                  </div>
+                </div>
+                <div class="inner-container _450px---mbl">
+                  <div class="inner-container _548px">
+                    <h3 class="blog-card-title heading-h2-size mg-bottom-16px">The importance of vegan food in the fast
+                      food industry</h3>
+                    <div class="inner-container _493px">
+                      <p class="mg-bottom-0">Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam diam vitae
+                        velit.</p>
+                    </div>
+                  </div>
+                </div>
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section id="book-a-table" data-w-id="b9f6d2b7-55b3-906a-2988-c9b7aa3c325a" style="opacity:0"
+      class="section pd-262px form---section-v1">
+      <div class="container-default w-container">
+        <div class="w-layout-grid grid-2-columns contact-form-side-details">
+          <div id="w-node-b9f6d2b7-55b3-906a-2988-c9b7aa3c328a-698b18f0"
+            data-w-id="b9f6d2b7-55b3-906a-2988-c9b7aa3c328a"
+            style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="contact-form-v1---main-content">
+            <div class="mg-bottom-24px mg-bottom-24px---mbl">
+              <div class="inner-container _450px---mbl">
+                <div class="inner-container _520px---tablet">
+                  <h2 class="display-2">Contact us today</h2>
+                  <p class="mg-bottom-0">Order El Potrero's Famous Quesadillas, Tacos, And More — Hot, Fresh, And Ready
+                    For Pickup In Oxford.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-layout-grid grid-1-column gap-row-32px form-links-grid"><a href="https://www.google.com/maps/"
+                target="_blank" class="link-contact form-link w-inline-block">
+                <div>
+                  <div class="text-400 semi-bold">Our location</div>
+                  <div class="display-4">5174 College Corner Pike,
+                    Oxford, Ohio 45056</div>
+                </div>
+              </a><a href="tel:(123)456-789" class="link-contact form-link w-inline-block">
+                <div>
+                  <div class="text-400 semi-bold">Call Us</div>
+                  <div class="display-4">(513) 255 - 9271</div>
+                </div>
+              </a></div>
+          </div>
+          <div id="w-node-b9f6d2b7-55b3-906a-2988-c9b7aa3c3266-698b18f0"
+            data-w-id="b9f6d2b7-55b3-906a-2988-c9b7aa3c3266"
+            style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.92, 0.92, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="section-form-block-v1---wrapper">
+            <div class="section-form-block-v1---form">
+              <div class="form-block-v1 w-form">
+                <form id="wf-form-Contact" name="wf-form-Contact" data-name="Contact" method="post" action="https://formspree.io/f/xjkljvpw"
+                  data-wf-page-id="64a82787dfc33bab698b18f0" data-wf-element-id="b9f6d2b7-55b3-906a-2988-c9b7aa3c3268">
+                  <div class="w-layout-grid grid-2-columns form-v1">
+                    <div><label for="name" class="color-neutral-100">Name</label><input class="input white w-input"
+                        maxlength="256" name="Name" data-name="Name" placeholder="John Carter" type="text" id="name"
+                        required="" /></div>
+                    <div><label for="email" class="color-neutral-100">Email</label><input class="input white w-input"
+                        maxlength="256" name="Email" data-name="Email" placeholder="contact@elpotrero.com" type="email"
+                        id="email" required="" /></div>
+                    <div><label for="phone" class="color-neutral-100">Phone</label><input class="input white w-input"
+                        maxlength="256" name="Phone" data-name="Phone" placeholder="(123) 456 - 7890" type="tel"
+                        id="phone" required="" /></div>
+                    <div><label for="subject" class="color-neutral-100">Subject</label><input
+                        class="input white w-input" maxlength="256" name="Subject" data-name="Subject"
+                        placeholder="Ex. Reservation" type="text" id="subject" required="" /></div>
+                    <div id="w-node-_3cc75e52-c2ec-a7eb-2722-0306a324e3d7-698b18f0" class="text-area-wrapper"><label
+                        for="message" class="color-neutral-100">Message</label><textarea required=""
+                        placeholder="Send us a message" maxlength="5000" id="message" name="Message" data-name="Message"
+                        class="text-area white w-node-c581368e-20f8-1bf3-6ca5-d13d342a8382-698b18f0 w-input"></textarea>
+                    </div><input type="submit" data-wait="Please wait..."
+                      id="w-node-b9f6d2b7-55b3-906a-2988-c9b7aa3c327e-698b18f0" class="btn-primary white w-button"
+                      value="Send Message" />
+                  </div>
+                </form>
+                <div class="success-message w-form-done">
+                  <div>
+                    <div class="line-rounded-icon success-message-check large"></div>
+                    <div class="display-3 color-neutral-100 mg-bottom-12px">Thank you</div>
+                    <div class="color-neutral-100">Your message has been submitted. <br />We will get back to you within
+                      24-48 hours.</div>
+                  </div>
+                </div>
+                <div class="error-message w-form-fail">
+                  <div>Oops! Something went wrong.</div>
+                </div>
+              </div>
+            </div>
+            <div class="section-form-block-v1---bg"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-wrapper form---section-v1---bg">
+        <div class="bg---top inverted-color color-secondary-3"></div>
+        <div class="bg---bottom inverted-color color-secondary-3"></div>
+      </div>
+    </section>
+    <!-- <section class="section pd-180px">
+      <div class="container-default overflow-hidden w-container">
+        <div class="mg-bottom-24px mg-bottom-24px---mbl">
+          <div data-w-id="da27379b-f726-e693-cd57-115bd1c3773b" class="inner-container _550px center">
+            <div class="text-center">
+              <h2 class="display-2 mg-bottom-0">Follow us on Instagram</h2>
+            </div>
+          </div>
+        </div>
+        <div data-delay="4000" data-animation="cross" class="slider-wrapper w-slider" data-autoplay="false"
+          data-easing="ease" data-hide-arrows="true" data-disable-swipe="false"
+          data-w-id="da27379b-f726-e693-cd57-115bd1c3773f" data-autoplay-limit="0" data-nav-spacing="7"
+          data-duration="500" data-infinite="true">
+          <div class="slider-mask w-slider-mask">
+            <div class="slide-item-mg instagram-card---item w-slide"><a data-w-id="da27379b-f726-e693-cd57-115bd1c37742"
+                href="https://www.instagram.com/" target="_blank" class="card instagram-feed-link-card w-inline-block">
+                <div class="mg-bottom-28px">
+                  <div class="flex align-center">
+                    <div class="mg-right-8px">
+                      <div class="square-icon icon-30px"><img src="./images/profile-image-vegan-x-webflow-template.svg"
+                          loading="eager" alt="Instagram Profile Avatar - Vegan X Webflow Template" /></div>
+                    </div>
+                    <div class="flex align-center">
+                      <h3 class="heading-h6-size mg-bottom-0">Vegan X</h3>
+                      <div class="mg-left-8px">
+                        <div class="inner-container _17px">
+                          <div class="flex-vertical"><img
+                              src="./images/verified-account-icon-vegan-x-webflow-template.svg" loading="eager"
+                              alt="Verified Account Icon - Vegan X Webflow Template" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="instagram-feed---image-wrapper"><img src="./images/photo-vegan-x-webflow-template.jpg"
+                    loading="eager" alt="Follow Us On Instagram - Vegan X Webflow Template"
+                    class="instagram-feed---image" />
+                  <div class="instagram-feed---image-overlay"><img
+                      src="./images/instagram-icon-white-brix-templates.svg" loading="eager"
+                      alt="Instagram Icon - Vegan X Webflow Template" class="instagram-feed---icon-inside" /></div>
+                </div>
+                <div class="instagram-link-cards---bottom-icons-container">
+                  <div class="inner-container _94px">
+                    <div class="flex align-center gap-column-12px">
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img src="./images/instagram-like-icon-vegan-x-webflow-template.svg"
+                            loading="eager" alt="Instagram Like Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-comment-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Comment Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-share-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Share Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inner-container _17px">
+                    <div class="flex-vertical"><img src="./images/instagram-save-icon-vegan-x-webflow-template.svg"
+                        loading="eager" alt="Instagram Save Icon - Vegan X Webflow Template" /></div>
+                  </div>
+                </div>
+              </a></div>
+            <div class="slide-item-mg instagram-card---item w-slide"><a data-w-id="da27379b-f726-e693-cd57-115bd1c37763"
+                href="https://www.instagram.com/" target="_blank" class="card instagram-feed-link-card w-inline-block">
+                <div class="mg-bottom-28px">
+                  <div class="flex align-center">
+                    <div class="mg-right-8px">
+                      <div class="square-icon icon-30px"><img src="./images/profile-image-vegan-x-webflow-template.svg"
+                          loading="eager" alt="Instagram Profile Avatar - Vegan X Webflow Template" /></div>
+                    </div>
+                    <div class="flex align-center">
+                      <h3 class="heading-h6-size mg-bottom-0">Vegan X</h3>
+                      <div class="mg-left-8px">
+                        <div class="inner-container _17px">
+                          <div class="flex-vertical"><img
+                              src="./images/verified-account-icon-vegan-x-webflow-template.svg" loading="eager"
+                              alt="Verified Account Icon - Vegan X Webflow Template" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="instagram-feed---image-wrapper"><img src="./images/photo-1-vegan-x-webflow-template.jpg"
+                    loading="eager" alt="Follow Us On Instagram - Vegan X Webflow Template"
+                    class="instagram-feed---image" />
+                  <div class="instagram-feed---image-overlay"><img
+                      src="./images/instagram-icon-white-brix-templates.svg" loading="eager"
+                      alt="Instagram Icon - Vegan X Webflow Template" class="instagram-feed---icon-inside" /></div>
+                </div>
+                <div class="instagram-link-cards---bottom-icons-container">
+                  <div class="inner-container _94px">
+                    <div class="flex align-center gap-column-12px">
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img src="./images/instagram-like-icon-vegan-x-webflow-template.svg"
+                            loading="eager" alt="Instagram Like Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-comment-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Comment Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-share-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Share Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inner-container _17px">
+                    <div class="flex-vertical"><img src="./images/instagram-save-icon-vegan-x-webflow-template.svg"
+                        loading="eager" alt="Instagram Save Icon - Vegan X Webflow Template" /></div>
+                  </div>
+                </div>
+              </a></div>
+            <div class="slide-item-mg instagram-card---item w-slide"><a data-w-id="da27379b-f726-e693-cd57-115bd1c37784"
+                href="https://www.instagram.com/" target="_blank" class="card instagram-feed-link-card w-inline-block">
+                <div class="mg-bottom-28px">
+                  <div class="flex align-center">
+                    <div class="mg-right-8px">
+                      <div class="square-icon icon-30px"><img src="./images/profile-image-vegan-x-webflow-template.svg"
+                          loading="eager" alt="Instagram Profile Avatar - Vegan X Webflow Template" /></div>
+                    </div>
+                    <div class="flex align-center">
+                      <h3 class="heading-h6-size mg-bottom-0">Vegan X</h3>
+                      <div class="mg-left-8px">
+                        <div class="inner-container _17px">
+                          <div class="flex-vertical"><img
+                              src="./images/verified-account-icon-vegan-x-webflow-template.svg" loading="eager"
+                              alt="Verified Account Icon - Vegan X Webflow Template" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="instagram-feed---image-wrapper"><img src="./images/photo-2-vegan-x-webflow-template.jpg"
+                    loading="eager" alt="Follow Us On Instagram - Vegan X Webflow Template"
+                    class="instagram-feed---image" />
+                  <div class="instagram-feed---image-overlay"><img
+                      src="./images/instagram-icon-white-brix-templates.svg" loading="eager"
+                      alt="Instagram Icon - Vegan X Webflow Template" class="instagram-feed---icon-inside" /></div>
+                </div>
+                <div class="instagram-link-cards---bottom-icons-container">
+                  <div class="inner-container _94px">
+                    <div class="flex align-center gap-column-12px">
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img src="./images/instagram-like-icon-vegan-x-webflow-template.svg"
+                            loading="eager" alt="Instagram Like Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-comment-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Comment Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-share-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Share Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inner-container _17px">
+                    <div class="flex-vertical"><img src="./images/instagram-save-icon-vegan-x-webflow-template.svg"
+                        loading="eager" alt="Instagram Save Icon - Vegan X Webflow Template" /></div>
+                  </div>
+                </div>
+              </a></div>
+            <div class="slide-item-mg instagram-card---item w-slide"><a data-w-id="da27379b-f726-e693-cd57-115bd1c377a5"
+                href="https://www.instagram.com/" target="_blank" class="card instagram-feed-link-card w-inline-block">
+                <div class="mg-bottom-28px">
+                  <div class="flex align-center">
+                    <div class="mg-right-8px">
+                      <div class="square-icon icon-30px"><img src="./images/profile-image-vegan-x-webflow-template.svg"
+                          loading="eager" alt="Instagram Profile Avatar - Vegan X Webflow Template" /></div>
+                    </div>
+                    <div class="flex align-center">
+                      <h3 class="heading-h6-size mg-bottom-0">Vegan X</h3>
+                      <div class="mg-left-8px">
+                        <div class="inner-container _17px">
+                          <div class="flex-vertical"><img
+                              src="./images/verified-account-icon-vegan-x-webflow-template.svg" loading="eager"
+                              alt="Verified Account Icon - Vegan X Webflow Template" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="instagram-feed---image-wrapper"><img src="./images/photo-3-vegan-x-webflow-template.jpg"
+                    loading="eager" alt="Follow Us On Instagram - Vegan X Webflow Template"
+                    class="instagram-feed---image" />
+                  <div class="instagram-feed---image-overlay"><img
+                      src="./images/instagram-icon-white-brix-templates.svg" loading="eager"
+                      alt="Instagram Icon - Vegan X Webflow Template" class="instagram-feed---icon-inside" /></div>
+                </div>
+                <div class="instagram-link-cards---bottom-icons-container">
+                  <div class="inner-container _94px">
+                    <div class="flex align-center gap-column-12px">
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img src="./images/instagram-like-icon-vegan-x-webflow-template.svg"
+                            loading="eager" alt="Instagram Like Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-comment-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Comment Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-share-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Share Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inner-container _17px">
+                    <div class="flex-vertical"><img src="./images/instagram-save-icon-vegan-x-webflow-template.svg"
+                        loading="eager" alt="Instagram Save Icon - Vegan X Webflow Template" /></div>
+                  </div>
+                </div>
+              </a></div>
+            <div class="slide-item-mg instagram-card---item w-slide"><a data-w-id="da27379b-f726-e693-cd57-115bd1c377c6"
+                href="https://www.instagram.com/" target="_blank" class="card instagram-feed-link-card w-inline-block">
+                <div class="mg-bottom-28px">
+                  <div class="flex align-center">
+                    <div class="mg-right-8px">
+                      <div class="square-icon icon-30px"><img src="./images/profile-image-vegan-x-webflow-template.svg"
+                          loading="eager" alt="Instagram Profile Avatar - Vegan X Webflow Template" /></div>
+                    </div>
+                    <div class="flex align-center">
+                      <h3 class="heading-h6-size mg-bottom-0">Vegan X</h3>
+                      <div class="mg-left-8px">
+                        <div class="inner-container _17px">
+                          <div class="flex-vertical"><img
+                              src="./images/verified-account-icon-vegan-x-webflow-template.svg" loading="eager"
+                              alt="Verified Account Icon - Vegan X Webflow Template" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="instagram-feed---image-wrapper"><img src="./images/photo-4-vegan-x-webflow-template.jpg"
+                    loading="eager" alt="Follow Us On Instagram - Vegan X Webflow Template"
+                    class="instagram-feed---image" />
+                  <div class="instagram-feed---image-overlay"><img
+                      src="./images/instagram-icon-white-brix-templates.svg" loading="eager"
+                      alt="Instagram Icon - Vegan X Webflow Template" class="instagram-feed---icon-inside" /></div>
+                </div>
+                <div class="instagram-link-cards---bottom-icons-container">
+                  <div class="inner-container _94px">
+                    <div class="flex align-center gap-column-12px">
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img src="./images/instagram-like-icon-vegan-x-webflow-template.svg"
+                            loading="eager" alt="Instagram Like Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-comment-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Comment Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-share-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Share Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inner-container _17px">
+                    <div class="flex-vertical"><img src="./images/instagram-save-icon-vegan-x-webflow-template.svg"
+                        loading="eager" alt="Instagram Save Icon - Vegan X Webflow Template" /></div>
+                  </div>
+                </div>
+              </a></div>
+            <div class="slide-item-mg instagram-card---item w-slide"><a data-w-id="da27379b-f726-e693-cd57-115bd1c377e7"
+                href="https://www.instagram.com/" target="_blank" class="card instagram-feed-link-card w-inline-block">
+                <div class="mg-bottom-28px">
+                  <div class="flex align-center">
+                    <div class="mg-right-8px">
+                      <div class="square-icon icon-30px"><img src="./images/profile-image-vegan-x-webflow-template.svg"
+                          loading="eager" alt="Instagram Profile Avatar - Vegan X Webflow Template" /></div>
+                    </div>
+                    <div class="flex align-center">
+                      <h3 class="heading-h6-size mg-bottom-0">Vegan X</h3>
+                      <div class="mg-left-8px">
+                        <div class="inner-container _17px">
+                          <div class="flex-vertical"><img
+                              src="./images/verified-account-icon-vegan-x-webflow-template.svg" loading="eager"
+                              alt="Verified Account Icon - Vegan X Webflow Template" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="instagram-feed---image-wrapper"><img src="./images/photo-1-vegan-x-webflow-template.jpg"
+                    loading="eager" alt="Follow Us On Instagram - Vegan X Webflow Template"
+                    class="instagram-feed---image" />
+                  <div class="instagram-feed---image-overlay"><img
+                      src="./images/instagram-icon-white-brix-templates.svg" loading="eager"
+                      alt="Instagram Icon - Vegan X Webflow Template" class="instagram-feed---icon-inside" /></div>
+                </div>
+                <div class="instagram-link-cards---bottom-icons-container">
+                  <div class="inner-container _94px">
+                    <div class="flex align-center gap-column-12px">
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img src="./images/instagram-like-icon-vegan-x-webflow-template.svg"
+                            loading="eager" alt="Instagram Like Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-comment-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Comment Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                      <div class="inner-container _21px">
+                        <div class="flex-vertical"><img
+                            src="./images/instagram-share-icon-vegan-x-webflow-template.svg" loading="eager"
+                            alt="Instagram Share Icon - Vegan X Webflow Template" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inner-container _17px">
+                    <div class="flex-vertical"><img src="./images/instagram-save-icon-vegan-x-webflow-template.svg"
+                        loading="eager" alt="Instagram Save Icon - Vegan X Webflow Template" /></div>
+                  </div>
+                </div>
+              </a></div>
+          </div>
+          <div class="btn-circle-secondary slider-arrow left _18px w-slider-arrow-left">
+            <div class="line-rounded-icon"></div>
+          </div>
+          <div class="btn-circle-secondary slider-arrow right _18px w-slider-arrow-right">
+            <div class="line-rounded-icon"></div>
+          </div>
+          <div class="hidden-on-desktop w-slider-nav w-slider-nav-invert w-round"></div>
+        </div>
+        <div class="mg-top-48px">
+          <div data-w-id="da27379b-f726-e693-cd57-115bd1c3780f" class="buttons-row center"><a
+              href="https://www.instagram.com/" target="_blank" class="btn-primary w-button">Follow us</a></div>
+        </div>
+      </div>
+    </section> -->
+    <footer>
+      <footer data-w-id="7db52de6-b774-129d-1b0f-f190e80491a4" class="footer-wrapper bg-neutral-800">
+        <div class="container-default w-container">
+          <div class="footer-top">
+            <div class="w-layout-grid grid-footer---3-column---subcribe">
+              <div data-w-id="7db52de6-b774-129d-1b0f-f190e80491a8">
+                <div class="heading-h2-size color-neutral-100 footer-title">Pages</div>
+                <div class="footer-list---main">
+                  <ul role="list" class="footer-list-wrapper">
+                    <li class="footer-list-item"><a href=./home-v1.html class="footer-link">Home</a></li>
+                    <li class="footer-list-item"><a href="./about.html" class="footer-link">About Us</a></li>
+                    <li class="footer-list-item"><a href="./menu.html" class="footer-link">Menu</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Hours section -->
+              <div data-w-id="business-hours-section">
+                <div class="heading-h2-size color-neutral-100 footer-title">Hours</div>
+                <div class="footer-list---main">
+                  <ul role="list" class="footer-list-wrapper">
+                    <li class="footer-list-item color-neutral-100">Mon: Closed (Day Off)</li>
+                    <li class="footer-list-item color-neutral-100">Tue-Sun: 11:00 AM - 9:00 PM</li>
+                    <li class="footer-list-item color-neutral-100">Walk-In & Doordash Available</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div id="w-node-_7db52de6-b774-129d-1b0f-f190e80491e0-91dd5701"
+                data-w-id="7db52de6-b774-129d-1b0f-f190e80491e0" class="card footer-subscribe---card">
+                <div>
+                  <div class="heading-h2-size color-neutral-100 mg-bottom-24px">Get <span class="text-no-wrap">In
+                      Touch</span></div>
+                  <div class="w-layout-grid grid-1-column"><a href="mailto:hi@el-potrero.com"
+                      class="link-contact w-inline-block">
+                      <div class="flex-horizontal align-top---start">
+                        <div class="mg-right-8px">
+                          <div class="flex-vertical"><img src="./images/email-vegan-x-webflow-template.svg"
+                              alt="Email Icon - Vegan X Webflow Template" class="square-icon _24px" /></div>
+                        </div>
+                        <div class="text-break-all">
+                          <div class="text-400 semi-bold color-neutral-100">hi@el-potrero.com</div>
+                        </div>
+                      </div>
+                    </a><a href="https://www.google.com/maps/" target="_blank" class="link-contact w-inline-block">
+                      <div class="flex-horizontal align-top---start">
+                        <div class="mg-right-8px">
+                          <div class="flex-vertical"><img src="./images/location-vegan-x-webflow-template.svg"
+                              alt="Location Icon - Vegan X Webflow Template" class="square-icon _24px" /></div>
+                        </div>
+                        <div class="max-w-260px">
+                          <div class="text-400 semi-bold color-neutral-100">5174 College Corner Pike,
+                            Oxford, Ohio 45056</div>
+                        </div>
+                      </div>
+                    </a><a href="tel:(123)456-789" class="link-contact w-inline-block">
+                      <div class="flex-horizontal align-top---start">
+                        <div class="mg-right-8px">
+                          <div class="flex-vertical"><img src="./images/phone-vegan-x-webflow-template.svg"
+                              alt="Phone Icon - Vegan X Webflow Template" class="square-icon _24px" /></div>
+                        </div>
+                        <div class="text-400 semi-bold color-neutral-100">(513) 255 - 9271</div>
+                      </div>
+                    </a></div>
+                </div>
+                <div class="mg-top-24px"><a href="./menu.html" class="btn-primary white width-100 w-button">Order
+                    now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-id="7db52de6-b774-129d-1b0f-f190e80491f7" class="footer-bottom">
+            <div class="w-layout-grid grid-footer-3-logo---paragraph"><a
+                id="w-node-_7db52de6-b774-129d-1b0f-f190e80491f9-91dd5701" href=./home-v1.html
+                class="footer-logo-wrapper w-inline-block"><img src="./images/ep_footer_logo.png"
+                  alt="Logo White - Vegan X Webflow Template" class="footer-logo" /></a>
+              <div id="w-node-d9360ccb-84d9-370a-b6bc-e6516b65e586-91dd5701" class="color-neutral-100">© Copyright -
+                El Potrero | Designed by <a href="mailto:nuruzadeomar2@gmail.com" target="_blank"
+                  class="link-footer-bottom">Omar Nuruzade</a></div>
+              <div id="w-node-_7db52de6-b774-129d-1b0f-f190e8049202-91dd5701" class="w-layout-grid flex-horizontal"><a
+                  href="https://www.facebook.com/quesadillaexpres/" target="_blank"
+                  class="social-icon-square white---size-24px w-inline-block">
+                  <div class="social-icon-font"></div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
+  </div>
+  <script src="./js/jquery.js?site=64a82787dfc33bab698b1929" type="text/javascript"></script>
+  <script src="./js/webflow-script.js" type="text/javascript"></script>
+  <!-- Google Reviews Script Disabled (Using Static Reviews)
+  <script>
+    // Google Place ID and API Key
+    const placeId = 'ChIJDyz0Y4o9QIgRnNVdOSj36p4';
+    const apiKey = 'AIzaSyD2NGxtTQrE9CD6E5TKPtsp6DU_381hMEM';
+
+    // Use a CORS proxy for local development. For production, use your own backend proxy.
+    const endpoint = `https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
+
+    fetch(endpoint)
+      .then(response => response.json())
+      .then(data => {
+        const reviews = data.result && data.result.reviews ? data.result.reviews : [];
+        const container = document.getElementById('google-reviews-testimonials');
+        if (!container) return;
+        if (reviews.length === 0) {
+          container.innerHTML = '<p>No reviews found.</p>';
+          return;
+        }
+        container.innerHTML = '';
+        reviews.slice(0, 4).forEach(review => {
+          container.innerHTML += `
+            <div class="slide-item-mg testimonial-card---item w-slide">
+              <div class="card content-center testimonial-v1">
+                <div class="inner-container _350px---mbl">
+                  <h3 class="heading-h2-size mg-bottom-24px">"${review.text}"</h3>
+                </div>
+                <div class="mg-bottom-24px">
+                  <div class="avatar-circle _06">
+                    <img alt="${review.author_name}" src="${review.profile_photo_url}" class="avatar-image" />
+                  </div>
+                </div>
+                <div class="inner-container _400px---mbl">
+                  <div class="text-center">
+                    <h4 class="heading-h4-size mg-bottom-16px">${review.author_name}</h4>
+                    <p class="mg-bottom-0">Rating: ${review.rating} / 5</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        // Re-initialize Webflow slider so navigation works
+        if (window.Webflow && window.Webflow.require) {
+          window.Webflow.require('slider').redraw();
+        }
+      })
+      .catch(err => {
+        const container = document.getElementById('google-reviews-testimonials');
+        if (container) container.innerHTML = '<p>Failed to load reviews.</p>';
+        console.error('Error fetching Google Reviews:', err);
+      });
+  </script>
+  -->
+  <!-- Second Google Reviews Script Disabled
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const placeId = 'ChIJDyz0Y4o9QIgRnNVdOSj36p4';
+      const apiKey = 'AIzaSyD2NGxtTQrE9CD6E5TKPtsp6DU_381hMEM';
+      const endpoint = `https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
+
+      // Wait for Webflow to initialize
+      setTimeout(() => {
+        fetch(endpoint)
+          .then(response => response.json())
+          .then(data => {
+            const reviews = data.result && data.result.reviews ? data.result.reviews : [];
+            const container = document.getElementById('google-reviews-testimonials');
+            if (!container) return;
+
+            if (reviews.length === 0) {
+              container.innerHTML = '<p>No reviews found.</p>';
+              return;
+            }
+
+            // Clear container
+            container.innerHTML = '';
+
+            // Add reviews as slides
+            reviews.slice(0, 4).forEach(review => {
+              const slideDiv = document.createElement('div');
+              slideDiv.className = 'slide-item-mg testimonial-card---item w-slide';
+              slideDiv.innerHTML = `
+                <div class="card content-center testimonial-v1">
+                  <div class="inner-container _350px---mbl">
+                    <h3 class="heading-h2-size mg-bottom-24px">"${review.text.substring(0, 150)}${review.text.length > 150 ? '...' : ''}"</h3>
+                  </div>
+                  <div class="mg-bottom-24px">
+                    <div class="avatar-circle _06">
+                      <img alt="${review.author_name}" src="${review.profile_photo_url}" class="avatar-image">
+                    </div>
+                  </div>
+                  <div class="inner-container _400px---mbl">
+                    <div class="text-center">
+                      <h4 class="heading-h4-size mg-bottom-16px">${review.author_name}</h4>
+                      <p class="mg-bottom-0">Rating: ${review.rating} / 5</p>
+                    </div>
+                  </div>
+                </div>
+              `;
+              container.appendChild(slideDiv);
+            });
+
+            // Find the parent slider component
+            const sliderElement = container.closest('.w-slider');
+            if (!sliderElement) return;
+
+            // Trigger window resize to make Webflow reinitialize the slider
+            setTimeout(() => {
+              window.dispatchEvent(new Event('resize'));
+
+              // Additional force redraw for Webflow if available
+              if (window.Webflow && window.Webflow.require) {
+                try {
+                  const slider = window.Webflow.require('slider');
+                  slider.ready();
+                  slider.destroy();
+                  slider.ready();
+                } catch (e) {
+                  console.log('Error reinitializing Webflow slider:', e);
+                }
+              }
+
+              // Re-get all slides and manually setup click events on arrows
+              const leftArrow = sliderElement.querySelector('.w-slider-arrow-left');
+              const rightArrow = sliderElement.querySelector('.w-slider-arrow-right');
+
+              if (leftArrow && rightArrow) {
+                leftArrow.addEventListener('click', function () {
+                  const event = new MouseEvent('tap', {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                  });
+                  this.dispatchEvent(event);
+                });
+
+                rightArrow.addEventListener('click', function () {
+                  const event = new MouseEvent('tap', {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                  });
+                  this.dispatchEvent(event);
+                });
+              }
+            }, 500);
+          })
+          .catch(err => {
+            const container = document.getElementById('google-reviews-testimonials');
+            if (container) container.innerHTML = '<p>Failed to load reviews.</p>';
+            console.error('Error fetching Google Reviews:', err);
+          });
+      }, 500); // Wait for Webflow init
+    });
+  </script>
+  -->
+
+  <!-- Add navigation dropdown script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get the menu dropdown elements
+      const menuToggle = document.querySelector('.dropdown-wrapper .dropdown-toggle');
+      const menuLink = document.querySelector('.dropdown-toggle .header-nav-link');
+      const dropdownList = document.querySelector('.dropdown-column-wrapper');
+
+      if (menuToggle && menuLink && dropdownList) {
+        // Make the menu link clickable separate from dropdown
+        menuToggle.addEventListener('click', function (e) {
+          if (e.target === menuLink || menuLink.contains(e.target)) {
+            // When clicking the Menu text, go to the link
+            e.stopPropagation(); // Prevent dropdown from opening
+            // Navigation happens naturally through the <a> tag
+          } else {
+            // When clicking elsewhere in the toggle area, open dropdown
+            dropdownList.classList.toggle('w--open');
+          }
+        });
+
+        // Add hover behavior
+        menuToggle.parentElement.addEventListener('mouseenter', function () {
+          dropdownList.classList.add('w--open');
+        });
+
+        menuToggle.parentElement.addEventListener('mouseleave', function () {
+          dropdownList.classList.remove('w--open');
+        });
+      }
+    });
+  </script>
+
+  <!-- Journal Menu Viewer Script -->
+  <script>
+    // Wait for PDF.js to load
+    function initJournalViewer() {
+      if (typeof pdfjsLib === 'undefined') {
+        console.error('PDF.js library not loaded');
+        const pageContainer = document.getElementById('journalPage');
+        if (pageContainer) {
+          pageContainer.innerHTML = '<div class="journal-loading">PDF.js library failed to load. Please check your internet connection.</div>';
+        }
+        return;
+      }
+
+      // Configure PDF.js worker
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+      class JournalMenuViewer {
+        constructor() {
+          this.currentMenu = 'lunch';
+          this.currentPage = 1;
+          this.totalPages = 0;
+          this.pdfDoc = null;
+          this.isLoading = false;
+
+          this.pageContainer = document.getElementById('journalPage');
+          this.iframeContainer = document.getElementById('journalIframe');
+          this.pdfIframe = document.getElementById('pdfIframe');
+          this.navContainer = document.getElementById('journalNav');
+          this.prevBtn = document.getElementById('prevPage');
+          this.nextBtn = document.getElementById('nextPage');
+          this.pageInfo = document.getElementById('pageInfo');
+          this.tabs = document.querySelectorAll('.journal-tab');
+          this.useIframe = false;
+
+          if (this.pageContainer) {
+            this.init();
+          }
+        }
+
+        init() {
+          // Tab switching
+          this.tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+              const menu = tab.dataset.menu;
+              if (menu !== this.currentMenu) {
+                this.tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                this.currentMenu = menu;
+                this.currentPage = 1;
+                this.useIframe = false;
+                this.pageContainer.style.display = 'block';
+                this.iframeContainer.style.display = 'none';
+                this.loadPDF();
+              }
+            });
+          });
+
+          // Navigation buttons
+          this.prevBtn.addEventListener('click', () => this.prevPage());
+          this.nextBtn.addEventListener('click', () => this.nextPage());
+
+          // Keyboard navigation
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prevPage();
+            if (e.key === 'ArrowRight') this.nextPage();
+          });
+
+          // Handle window resize to recalculate page scale
+          let resizeTimeout;
+          window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+              if (!this.useIframe && this.pdfDoc && this.currentPage) {
+                this.renderPage(this.currentPage);
+              }
+            }, 250);
+          });
+
+          // Load initial PDF
+          this.loadPDF();
+        }
+
+        async loadPDF() {
+          if (this.isLoading) return;
+          this.isLoading = true;
+
+          const pdfPath = this.currentMenu === 'lunch' ? './menu-lunch.pdf' : './menu-main.pdf';
+
+          // Check if we're on file:// protocol - if so, use iframe directly
+          if (window.location.protocol === 'file:') {
+            this.useIframeFallback();
+            this.isLoading = false;
+            return;
+          }
+
+          try {
+            this.pageContainer.innerHTML = '<div class="journal-loading">Loading menu...</div>';
+            this.prevBtn.disabled = true;
+            this.nextBtn.disabled = true;
+
+            // Load PDF as ArrayBuffer to handle local files better
+            let pdfData;
+            try {
+              const response = await fetch(pdfPath);
+              if (!response.ok) {
+                throw new Error('Failed to fetch PDF');
+              }
+              pdfData = await response.arrayBuffer();
+            } catch (fetchError) {
+              // Fallback: try direct path loading
+              console.log('Fetch failed, trying direct load:', fetchError);
+              pdfData = pdfPath;
+            }
+
+            const loadingTask = pdfjsLib.getDocument({
+              data: pdfData,
+              cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+              cMapPacked: true,
+              isEvalSupported: false
+            });
+
+            this.pdfDoc = await loadingTask.promise;
+            this.totalPages = this.pdfDoc.numPages;
+            this.currentPage = 1;
+
+            await this.renderPage(1);
+            this.updateNavigation();
+            this.navContainer.style.display = 'flex';
+          } catch (error) {
+            console.error('Error loading PDF with PDF.js:', error);
+            // Fallback to iframe
+            this.useIframeFallback();
+          } finally {
+            this.isLoading = false;
+          }
+        }
+
+        useIframeFallback() {
+          this.useIframe = true;
+          const pdfPath = this.currentMenu === 'lunch' ? './menu-lunch.pdf' : './menu-main.pdf';
+
+          // Hide canvas container, show iframe
+          this.pageContainer.style.display = 'none';
+          this.iframeContainer.style.display = 'block';
+          // Use FitH to fit horizontally, disable all controls and scrolling
+          this.pdfIframe.src = pdfPath + '#view=FitH&toolbar=0&navpanes=0&scrollbar=0&zoom=page-fit';
+          this.navContainer.style.display = 'none';
+
+          // Try to get page count for iframe navigation
+          this.setupIframeNavigation();
+        }
+
+        async setupIframeNavigation() {
+          const pdfPath = this.currentMenu === 'lunch' ? './menu-lunch.pdf' : './menu-main.pdf';
+
+          // Try to load with PDF.js just to get page count
+          if (typeof pdfjsLib !== 'undefined') {
+            try {
+              let pdfData;
+              try {
+                const response = await fetch(pdfPath);
+                if (response.ok) {
+                  pdfData = await response.arrayBuffer();
+                } else {
+                  pdfData = pdfPath;
+                }
+              } catch (e) {
+                pdfData = pdfPath;
+              }
+
+              const pdf = await pdfjsLib.getDocument({
+                data: pdfData,
+                cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+                cMapPacked: true,
+                isEvalSupported: false
+              }).promise;
+
+              this.totalPages = pdf.numPages;
+              this.currentPage = 1;
+              this.navContainer.style.display = 'flex';
+              this.updateNavigation();
+            } catch (err) {
+              console.log('Could not get page count for iframe navigation');
+              // Hide navigation if we can't get page count
+              this.navContainer.style.display = 'none';
+            }
+          }
+        }
+
+        async renderPage(pageNum) {
+          if (!this.pdfDoc) return;
+
+          try {
+            const page = await this.pdfDoc.getPage(pageNum);
+
+            // Get container dimensions
+            const container = this.pageContainer;
+            const containerWidth = container.clientWidth - 80; // Account for padding and shadow
+            const containerHeight = container.clientHeight - 80; // Account for padding and shadow
+
+            // Get PDF page dimensions
+            const viewport = page.getViewport({ scale: 1.0 });
+            const pageWidth = viewport.width;
+            const pageHeight = viewport.height;
+
+            // Calculate scale to fit horizontally (prioritize width)
+            const scaleX = containerWidth / pageWidth;
+            const scale = scaleX * 0.95; // 95% to ensure it fits with margin
+
+            // Create viewport with calculated scale
+            const scaledViewport = page.getViewport({ scale: scale });
+
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.height = scaledViewport.height;
+            canvas.width = scaledViewport.width;
+            canvas.style.maxWidth = '100%';
+            canvas.style.maxHeight = '100%';
+            canvas.style.width = 'auto';
+            canvas.style.height = 'auto';
+
+            // Render PDF page
+            const renderContext = {
+              canvasContext: context,
+              viewport: scaledViewport
+            };
+
+            await page.render(renderContext).promise;
+
+            // Add page flip animation
+            this.pageContainer.classList.add('flipping');
+            setTimeout(() => {
+              this.pageContainer.innerHTML = '';
+              this.pageContainer.appendChild(canvas);
+              this.pageContainer.classList.remove('flipping');
+            }, 300);
+          } catch (error) {
+            console.error('Error rendering page:', error);
+          }
+        }
+
+        async nextPage() {
+          if (this.useIframe) {
+            if (this.currentPage < this.totalPages) {
+              this.currentPage++;
+              const pdfPath = this.currentMenu === 'lunch' ? './menu-lunch.pdf' : './menu-main.pdf';
+              this.pdfIframe.src = pdfPath + `#page=${this.currentPage}&view=FitH&toolbar=0&navpanes=0&scrollbar=0&zoom=page-fit`;
+              this.updateNavigation();
+            }
+          } else {
+            if (this.currentPage < this.totalPages && !this.isLoading) {
+              this.currentPage++;
+              await this.renderPage(this.currentPage);
+              this.updateNavigation();
+            }
+          }
+        }
+
+        async prevPage() {
+          if (this.useIframe) {
+            if (this.currentPage > 1) {
+              this.currentPage--;
+              const pdfPath = this.currentMenu === 'lunch' ? './menu-lunch.pdf' : './menu-main.pdf';
+              this.pdfIframe.src = pdfPath + `#page=${this.currentPage}&view=FitH&toolbar=0&navpanes=0&scrollbar=0&zoom=page-fit`;
+              this.updateNavigation();
+            }
+          } else {
+            if (this.currentPage > 1 && !this.isLoading) {
+              this.currentPage--;
+              await this.renderPage(this.currentPage);
+              this.updateNavigation();
+            }
+          }
+        }
+
+        updateNavigation() {
+          this.pageInfo.textContent = `Page ${this.currentPage} of ${this.totalPages}`;
+          this.prevBtn.disabled = this.currentPage === 1;
+          this.nextBtn.disabled = this.currentPage === this.totalPages;
+        }
+      }
+
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          new JournalMenuViewer();
+        });
+      } else {
+        new JournalMenuViewer();
+      }
+    }
+
+    // Initialize after PDF.js loads
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit for PDF.js to load
+        setTimeout(initJournalViewer, 100);
+      });
+    } else {
+      setTimeout(initJournalViewer, 100);
+    }
+  </script>
+</body>
+
+</html>
