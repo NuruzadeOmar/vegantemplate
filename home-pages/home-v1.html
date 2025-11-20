@@ -353,7 +353,8 @@
                         <div class="w-layout-grid grid-2-columns dropdown-link-column">
                           <a href="../menu.html#popular-dishes" class="dropdown-link w-dropdown-link">Popular Dishes</a>
                           <a href="../menu.html#lunch-specials" class="dropdown-link w-dropdown-link">Lunch Specials</a>
-                          <a href="../menu.html#especialidades" class="dropdown-link w-dropdown-link">Especialidades El Potrero</a>
+                          <a href="../menu.html#especialidades" class="dropdown-link w-dropdown-link">Especialidades El
+                            Potrero</a>
                           <a href="../menu.html#appetizers-dips" class="dropdown-link w-dropdown-link">Sampler</a>
                           <a href="../menu.html#street-tacos" class="dropdown-link w-dropdown-link">Street Tacos</a>
                           <a href="../menu.html#quesadillas" class="dropdown-link w-dropdown-link">Quesadillas</a>
@@ -1195,8 +1196,9 @@
             class="section-form-block-v1---wrapper">
             <div class="section-form-block-v1---form">
               <div class="form-block-v1 w-form">
-                <form id="wf-form-Contact" name="wf-form-Contact" data-name="Contact" method="post" action="https://formspree.io/f/xjkljvpw"
-                  data-wf-page-id="64a82787dfc33bab698b18f0" data-wf-element-id="b9f6d2b7-55b3-906a-2988-c9b7aa3c3268">
+                <form id="wf-form-Contact" name="wf-form-Contact" data-name="Contact" method="post"
+                  action="https://formspree.io/f/xjkljvpw" data-wf-page-id="64a82787dfc33bab698b18f0"
+                  data-wf-element-id="b9f6d2b7-55b3-906a-2988-c9b7aa3c3268">
                   <div class="w-layout-grid grid-2-columns form-v1">
                     <div><label for="name" class="color-neutral-100">Name</label><input class="input white w-input"
                         maxlength="256" name="Name" data-name="Name" placeholder="John Carter" type="text" id="name"
@@ -2070,15 +2072,20 @@
 
             // Calculate scale to fit horizontally - fill the full width
             const scale = containerWidth / pageWidth;
+            const outputScale = window.devicePixelRatio || 1;
 
-            // Create viewport with calculated scale
-            const scaledViewport = page.getViewport({ scale: scale });
+            // Create viewport with calculated scale - adjust for High DPI
+            const scaledViewport = page.getViewport({ scale: scale * outputScale });
 
             // Create canvas
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.height = scaledViewport.height;
             canvas.width = scaledViewport.width;
+
+            // Scale down via CSS for High DPI displays
+            canvas.style.width = (scaledViewport.width / outputScale) + 'px';
+            canvas.style.height = (scaledViewport.height / outputScale) + 'px';
 
             // Render PDF page
             const renderContext = {

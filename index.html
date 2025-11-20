@@ -2070,15 +2070,20 @@
 
             // Calculate scale to fit horizontally - fill the full width
             const scale = containerWidth / pageWidth;
+            const outputScale = window.devicePixelRatio || 1;
 
-            // Create viewport with calculated scale
-            const scaledViewport = page.getViewport({ scale: scale });
+            // Create viewport with calculated scale - adjust for High DPI
+            const scaledViewport = page.getViewport({ scale: scale * outputScale });
 
             // Create canvas
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.height = scaledViewport.height;
             canvas.width = scaledViewport.width;
+            
+            // Scale down via CSS for High DPI displays
+            canvas.style.width = (scaledViewport.width / outputScale) + 'px';
+            canvas.style.height = (scaledViewport.height / outputScale) + 'px';
 
             // Render PDF page
             const renderContext = {
